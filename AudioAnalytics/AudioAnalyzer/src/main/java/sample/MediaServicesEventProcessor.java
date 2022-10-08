@@ -59,6 +59,10 @@ public class MediaServicesEventProcessor {
     public void stop() {
         ((EventProcessorClient) this.monitor).stop();
     }
+    
+    public void start() {
+        ((EventProcessorClient) this.monitor).start();
+    }
 
     private EventProcessorClient buildEventProcessClient() {
         return new EventProcessorClientBuilder()

@@ -133,7 +133,9 @@ public class AudioAnalyzer {
                 eventProcessorHost = new MediaServicesEventProcessor(jobName, monitor, null,
                         config.getEventHubConnectionString(), config.getEventHubName(),
                         container);
-
+                //Start the event processor Host 
+                eventProcessorHost.start();
+                
                 // Define a task to wait for the job to finish.
                 Callable<String> jobTask = () -> {
                     synchronized (monitor) {
